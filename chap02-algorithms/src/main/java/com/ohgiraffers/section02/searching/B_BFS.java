@@ -73,8 +73,29 @@ public class B_BFS {
             System.out.println();
         }
         System.out.println("---------------------------------------");
+        count = 0;
 
+        /* 배추 찾기 */
+        for(int i = 0; i < M; i++) {
+            for(int j = 0; j < N; j++) {
+                if(map[i][j] == 1 && !visit[i][j]) {
+                    count++;
+                    // 해당 위치에 붙어있는 배추밭을 방문 체크(붙어있는 배추 묶음을 파악)
+                    bfs(i, j);
+                }
+            }
+        }
 
         return count;
+    }
+
+    /***
+     * 지렁이가 심어질 때마다 한 번씩 동작하는 bfs메소드
+     * @param i
+     * @param j
+     */
+    private static void bfs(int i, int j) {
+
+
     }
 }
